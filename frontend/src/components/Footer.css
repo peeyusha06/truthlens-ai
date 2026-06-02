@@ -1,0 +1,26 @@
+/* ============================================================
+   Footer.css – Minimal footer
+   ============================================================ */
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: 20px 0;
+  background: rgba(8, 12, 26, 0.6);
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 1;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__brand {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text-secondary);
+}

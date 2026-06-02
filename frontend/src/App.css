@@ -1,0 +1,130 @@
+/* ============================================================
+   App.css – Layout for the root App component
+   ============================================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Ambient Glow Orbs ── */
+.ambient-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+.ambient-orb--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  animation: float-orb 8s ease-in-out infinite;
+}
+
+.ambient-orb--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+  bottom: 100px;
+  left: -150px;
+  animation: float-orb 10s ease-in-out infinite reverse;
+}
+
+.ambient-orb--3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.06) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float-orb 12s ease-in-out infinite;
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-30px) scale(1.05); }
+}
+
+/* ── Main Content ── */
+.app__main {
+  flex: 1;
+  padding: 40px 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Analyze Layout (2-column) ── */
+.app__analyze-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+  .app__analyze-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Error Banner ── */
+.app__error-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  color: #fca5a5;
+  font-size: 0.9rem;
+  animation: fadeInUp 0.3s ease;
+}
+
+.app__error-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ── Empty State ── */
+.app__empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 32px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(20px);
+  animation: fadeIn 0.5s ease;
+  min-height: 300px;
+}
+
+.app__empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.app__empty-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+
+.app__empty-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  max-width: 260px;
+  line-height: 1.6;
+}
