@@ -277,7 +277,7 @@ taskkill /PID <pid> /F
 
 ## 🎓 Project Notes
 
-- This is a **student PBL project** demonstrating real-world system architecture
+- This is a **full-stack MVP** demonstrating real-world system architecture.
 - No model training is claimed — pre-trained models and APIs are used
 - The Hive AI API provides the most accurate results
 - Gemini generates contextual explanations of the detection results
